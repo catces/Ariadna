@@ -1,13 +1,11 @@
 import { Router } from "express";
 import { registerUser,loginUser,deleteUser,getUser,deleteAllUsers } from "../controllers/authentication/authLogRes";
-import { verifyToken } from "../middlewares/verifyToken";
-
 
 const router = Router();
 
 router.post('/auth/register',registerUser);
-router.post('/login',loginUser);
-router.get('/', getUser);
+router.post('/auth/login',loginUser);
+router.get('/userDetails',getUser);
 router.delete('/', deleteUser);
 router.delete('/deleteall',deleteAllUsers)
 // router.post('/', (req, res, next) => {

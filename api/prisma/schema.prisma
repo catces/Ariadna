@@ -26,5 +26,6 @@ model User {
   streetNumber String
   department   String
   municipality String
+  url          String
   //@@unique([name, mail])
 }

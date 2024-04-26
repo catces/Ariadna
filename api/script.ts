@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 
 import app from './src/app';
 import dotenv from 'dotenv';
-import {verifyToken} from './src/middlewares/verifyToken';
+
 dotenv.config();
 
 const { PORT } = process.env;

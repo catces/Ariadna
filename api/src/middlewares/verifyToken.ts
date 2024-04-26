@@ -13,12 +13,11 @@ export const verifyToken = async (req:Request, res:Response, next:NextFunction)=
         const token = headerToken.replace("Bearer ", "");
         try {
             const decoded = jwt.verify(token,process.env.JWT_SECRET);
-            console.log(decoded);
-            // req.user_id = decoded.user_id;
+            req.body.user_id = decoded.user_id;
             next();
         } catch (error) {
             console.log(error);
-            return res.json({role:'invalid'});    
+            return res.json({role:'invalid'});
         }
     } catch (error) {
         console.log(error);
